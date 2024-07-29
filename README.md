@@ -90,3 +90,34 @@ db.books.insertMany([
 `
 Note: if we tries to insert data in a collection which doesn't exist then this command will create  the collection and insert into it.
 `
+
+#### get all documents from collection
+```
+db.collection_name.find() # in mongo shell we will see only 20 documnet but in code base we will get all the documents
+
+# in mongo shell if we want to see more document then write 'it' in the shell and enter
+# it means itaration
+```
+
+#### get document, find document with options
+```
+# commands 
+db.collaction_name.find({filter query},{which fields you want},{options}) 
+```
+
+```
+################### Providing only first argument for filter. returns whole object That matchs the fields with values. ####################
+
+db.collection_name.find({fild_name: 'match_value'}) 
+db.collection_name.find({fild_name1: 'match_value1', fild_name2: 'match_value2'}) # will match both 
+
+################### Providing first and 2nd argument for filter and specifiying which fields we want ######################
+db.collection_name.find({fild_name: 'match_value'}, {title: 1, author: 1})  # will return the objs that matchs the filters, only title and author values.
+db.collection_name.find({fild_name1: 'match_value1', fild_name2: 'match_value2'}, {title: 1, author: 1})  # will return the objs that matchs the filters, only title and author values. 
+```
+
+
+#### get/find one document
+```
+db.books.findOne({ _id: ObjectId("your_specific_id") }) #search with id 
+```

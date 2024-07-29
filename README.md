@@ -12,7 +12,16 @@
 `
     cls
 `
-#### use any database. before running command for a databases use this command:
+#### Use any database. before running command for a databases use this command:
 `
-   use <bd_name> 
+   use <database_name> 
+`
+#### See which database we are currently using:
+`
+    db
+`
+#### Show all collections in a database
+`
+    use <database_name> # if you are already on the db then no need 
+    show collections
 `

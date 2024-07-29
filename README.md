@@ -23,5 +23,8 @@
 #### Show all collections in a database
 `
     use <database_name> # if you are already on the db then no need 
+   
+`
+`
     show collections
 `

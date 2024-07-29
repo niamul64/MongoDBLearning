@@ -48,7 +48,43 @@
 db.books    # this is to check that there is no error. or check is current db has the 'books' collection. this should return "bookstore.books"
 
 db.books.insertOne({title: "string", author: "string", pages: 300, rating:7, genres=["1str","2str"]}) 
+# return-> {
+#   acknowledged: true
+#   insertedId: ObjectId("4123423525faf11414wsdfr2")   
+# }
 
+```
+
+`
+Note: if we tries to insert data in a collection which doesn't exist then this command will create  the collection and insert into it.
+`
+
+#### Insert many new documents/ objs in mongodb collection
+```
+# Lets say we have a data base named 'bookstore' and a collection 'books'
+# fields-> title, author, pages, rating, genres
+
+db.books    # this is to check that there is no error. or check is current db has the 'books' collection. this should return "bookstore.books"
+
+db.books.insertMany([
+    {
+        title: "string", author: "string", pages: 300, rating:7, genres=["1str","2str"]
+    },
+    {
+        title: "string", author: "string", pages: 300, rating:7, genres=["1str","2str"]
+    },
+    {
+        title: "string", author: "string", pages: 300, rating:7, genres=["1str","2str"]
+    },
+]) 
+
+# return-> {
+#   acknowledged: true
+#   insertedIds: {
+#        '0': ObjectId("4123423525faf11414wsdfr2"),
+#        '1': ObjectId("5153423525f3a34414wsd234")
+#    }
+# }
 ```
 
 `

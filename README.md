@@ -50,4 +50,7 @@ db.books    # this is to check that there is no error. or check is current db ha
 db.books.insertOne({title: "string", author: "string", pages: 300, rating:7, genres=["1str","2str"]}) 
 
 ```
+
+`
 Note: if we tries to insert data in a collection which doesn't exist then this command will create  the collection and insert into it.
+`

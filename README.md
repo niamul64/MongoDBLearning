@@ -1,4 +1,8 @@
 ## install mongo db, and mongo db shell
+### link of the shell command methods or collection methods:
+`
+ https://www.mongodb.com/docs/manual/reference/method/js-collection/
+`
 
 #### Enter Mongo Shell:
 ```
@@ -101,23 +105,32 @@ db.collection_name.find() # in mongo shell we will see only 20 documnet but in c
 
 #### get document, find document with options
 ```
-# commands 
+*command*
 db.collaction_name.find({filter query},{which fields you want},{options}) 
 ```
 
 ```
+*example*
+
 ################### Providing only first argument for filter. returns whole object That matchs the fields with values. ####################
 
 db.collection_name.find({fild_name: 'match_value'}) 
 db.collection_name.find({fild_name1: 'match_value1', fild_name2: 'match_value2'}) # will match both 
 
-################### Providing first and 2nd argument for filter and specifiying which fields we want ######################
-db.collection_name.find({fild_name: 'match_value'}, {title: 1, author: 1})  # will return the objs that matchs the filters, only title and author values.
-db.collection_name.find({fild_name1: 'match_value1', fild_name2: 'match_value2'}, {title: 1, author: 1})  # will return the objs that matchs the filters, only title and author values. 
+################### Providing first and 2nd argument for filter and specifiying which fields' value we want ######################
+
+db.collection_name.find({fild_name: 'match_value'}, {title: 1, author: 1})  # will return the objs that matchs the filters, and fields only title and author values.
+db.collection_name.find({fild_name1: 'match_value1', fild_name2: 'match_value2'}, {title: 1, author: 1})  # will return the objs that matchs the filters, and fields only title and author values. 
+
+################### all documents but only specified fields ######################
+
+db.books.find({},{title: 1, author: 1}) # will return all documents but only the title and author fields
 ```
 
 
 #### get/find one document
 ```
-db.books.findOne({ _id: ObjectId("your_specific_id") }) #search with id 
+*command*
+db.books.findOne({ _id: ObjectId("your_specific_id") }) #search with id
+db.books.findOne({ _id: ObjectId("your_specific_id") },{title: 1, author: 1}) #search with id and specify the fields 
 ```
